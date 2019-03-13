@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Draw a rectangular shape</title>
+
+<style>
+#myBtn {
+  position: absolute;
+}
+</style>
+
+
+<script type = "text/javascript" src = "draw.js">
+
+function handleFile() {
+  
+fh = fopen(getScriptPath(), 0); // Open the file for reading
+if(fh!=-1) // If the file has been successfully opened
+{
+    length = flength(fh);         // Get the length of the file    
+    str = fread(fh, length);     // Read in the entire file
+    fclose(fh);                    // Close the file
+    
+// Display the contents of 	the file    
+    write(str);    
+}
+}
+
+var ctx=canvas.getContext('2d'); 		
+
+</script>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="1805" height="755" style= "border: 4px Solid Black"></canvas>
+<!--
+<input type="file" id="aFile" name="txtF"/>
+<form name="form1">
+<input type="text" name="textfield" value="">
+</form>
+<input type="button" value="Read File" onclick="handleFile();">
+
+<button onclick="loadTxtDoc('textfile.txt')">Click</button>  
+-->
+
+
+<form> 
+        <input type = "button" onclick = "up()" value = "up">
+	<input type = "button" onclick = "down()" value = "down">
+	<input type = "button" onclick = "right()" value = "right">
+	<input type = "button" onclick = "left()" value = "left">
+	<input type = "button" onclick = "rotatecw()" value = "rotate clockwise">
+	<input type = "button" onclick = "rotateacw()" value = "rotate anticlockwise">
+<!--	<input type = "button" onclick = "reset()" value = "reset">
+	-->
+</form>
+	
+</body>
+</html>
+
