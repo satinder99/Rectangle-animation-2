@@ -3,4 +3,3 @@ It contains a rectangle "abdc" with its breadth double than its length. There is
 
 Side bd is rotated in both clockwise and anticlockwise direction about point p with keeping side ac fixed.
 
-Till now I have achieved only up, down, right and left movement. I will update the code as soon as I complete it.
