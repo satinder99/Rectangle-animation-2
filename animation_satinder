@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=UTF-8>
+		<script src="two.min.js"></script>
+	</head>
+<body onload="draw()">
+
+<canvas id="myCanvas" width="400" height="400">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+canvas = document.getElementById('myCanvas');
+ctx=canvas.getContext('2d');
+
+var two = new Two({ height: 400,width:400 }).appendTo(document.body);
+//rectangle
+
+
+var xb=200,yb=100,xd=200,yd=300;
+function draw()
+{ ctx.clearRect(0,0,400,400);
+	 ctx.beginPath();
+	ctx.moveTo(xb,yb);
+var lineab=ctx.lineTo(100,100);
+var lineac=ctx.lineTo(100,300);
+var linecd=ctx.lineTo(xd,yd);
+var linebd=ctx.lineTo(xb,yb);
+	ctx.stroke;
+	point();
+//	ctx.closePath()
+}
+
+//point1
+var xp=200,yp=200;
+
+function point()
+{
+ var p=ctx.arc(xp,yp,2,0,360);
+ctx.stroke();
+}
+
+
+function rotatecw()
+{ 
+	var h1=yp-yb;
+	var th=5;
+	var p1=h1*Math.tan(th*Math.PI/180);
+
+	var h2=yd-yp;
+	var p2=h2*Math.tan(th*Math.PI/180);
+
+	xb=xb+p1;
+	xd=xd-p2;
+	draw();
+}
+function rotateacw(){
+
+	xb-=5;
+	xd+=5;
+	draw();}
+function up(){
+	yp-=5;
+	draw();}
+function down(){
+	yp+=5;
+	dwaw();}
+function right(){
+	xp+=5;
+	draw();}
+function left(){
+	xp-=5;
+	draw();}
+
+</script>
+
+<form> 
+        <input type = "button" onclick = "up()" value = "up">
+	<input type = "button" onclick = "down()" value = "down">
+	<input type = "button" onclick = "right()" value = "right">
+	<input type = "button" onclick = "left()" value = "left">
+	<input type = "button" onclick = "rotatecw()" value = "rotate clockwise">
+	<input type = "button" onclick = "rotateacw()" value = "rotate anticlockwise">
+
+</form>
+<input type="text" id="input1"><br>
+<button onclick="dwaw1()" id="btn1">click me</button> 
+
+</body>
+</html>
